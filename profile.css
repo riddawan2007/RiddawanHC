@@ -1,0 +1,226 @@
+/* ---------- RESET + BASE ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+a { text-decoration: none; }
+li { list-style: none; }
+
+.container {
+  position: relative;
+  min-height: 100vh;
+}
+
+/* ---------- BACKGROUND ---------- */
+.bg {
+  position: fixed;   /* ให้พื้นหลังปักเต็มจอ */
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+.bg::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-image: url(BGSocial.jpg);
+  background-size: cover;
+  background-position: center;
+  filter: brightness(45%);
+  animation: zoomBg 20s infinite alternate ease-in-out;
+}
+@keyframes zoomBg {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}
+
+/* ---------- MENU ---------- */
+.menu {
+  position: fixed;
+  top: 20px;
+  right: 40px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  background: rgba(0,0,0,0.4);
+  padding: 10px 20px;
+  border-radius: 25px;
+  backdrop-filter: blur(5px);
+  z-index: 20;
+}
+.menu .logo a {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #ffdf6c;
+  letter-spacing: 1px;
+}
+.menu ul {
+  display: flex;
+  gap: 20px;
+}
+.menu ul li a {
+  font-weight: bold;
+  color: #fff;
+  font-size: 16px;
+  transition: all 0.3s;
+  position: relative;
+}
+.menu ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px; left: 50%;
+  width: 0; height: 2px;
+  background: #ffdf6c;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+.menu ul li a:hover { color: #ffdf6c; }
+.menu ul li a:hover::after { width: 70%; }
+
+.profile-header {
+  position: relative;
+  margin: 12px 0 20px 8%;
+  z-index: 5;
+  top: 50px;
+}
+.profile-header h1 {
+  font-size: 5rem;
+  font-weight: bold;
+  color: #ffdf6c;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+  animation: fadeInDown 1s ease;
+}
+.profile-header h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #fcfcfb;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+  animation: fadeInLeft 1.5s ease;
+}
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+/* ---------- PROFILE PAGE ---------- */
+.profile-container {
+  width: 80%;
+  margin: 100px auto 40px auto;   /* ขยับขึ้นมา */
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  z-index: 5;
+}
+
+.profile-card {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+  flex: 0 0 280px;
+  transition: 0.4s;
+}
+.profile-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+}
+
+.profile-img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 4px solid #ffdf6c;
+}
+
+.profile-card h2 {
+  color: #fff;
+  margin-bottom: 10px;
+}
+.profile-card .tagline {
+  font-size: 0.9rem;
+  color: #ddd;
+  margin-bottom: 15px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+.social-icons a {
+  font-size: 1.5rem;
+  color: #fff;
+  transition: 0.3s;
+}
+.social-icons a:hover {
+  color: #ffdf6c;
+}
+
+/* About Me Section */
+.about-me {
+  flex: 1;
+  background: rgba(0,0,0,0.5);
+  padding: 25px 30px;
+  border-radius: 20px;
+  color: #f2f2f2;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+.about-me h3 {
+  color: #ffdf6c;
+  margin: 15px 0 10px 0;
+}
+.about-me p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+.about-me .skills {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.about-me .skills li {
+  margin: 6px 0;
+  color: #eee;
+}
+.about-me .skills i {
+  color: #ffdf6c;
+  margin-right: 6px;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
+  .profile-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .about-me {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-header {
+    margin: 60px 0 15px 6%;
+  }
+  .profile-header h1 {
+    font-size: 3rem;
+  }
+  .profile-header h2 {
+    font-size: 1.8rem;
+  }
+}

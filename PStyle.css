@@ -1,0 +1,173 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial;
+}
+
+* a{ text-decoration: none; }
+* li{ list-style: none; }
+
+.container{ position: relative; min-height: 100vh; }
+
+.bg{ width: 100%; height: 100%; position: relative; }
+.bg::after{
+    content:"";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image: url(BGSocial.jpg);
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(45%);
+    animation: zoomBg 20s infinite alternate ease-in-out;
+}
+@keyframes zoomBg {
+    from { transform: scale(1); }
+    to { transform: scale(1.1); }
+}
+
+/* ----- MENU ----- */
+.menu{
+    position: fixed;
+    top: 20px;
+    right: 40px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background: rgba(0,0,0,0.4);
+    padding: 10px 20px;
+    border-radius: 25px;
+    backdrop-filter: blur(5px);
+    z-index: 20;
+}
+.menu .logo a {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ffdf6c;
+    letter-spacing: 1px;
+}
+.menu ul{ display: flex; gap: 20px; }
+.menu ul li a{
+    font-weight: bold;
+    color: #fff;
+    font-size: 16px;
+    transition: all 0.3s;
+    position: relative;
+}
+.menu ul li a::after {
+    content: "";
+    position: absolute;
+    bottom: -5px; left: 50%;
+    width: 0; height: 2px;
+    background: #ffdf6c;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+.menu ul li a:hover{ color: #ffdf6c; }
+.menu ul li a:hover::after{ width: 70%; }
+
+/* ----- PROFILE HEADER ----- */
+.profile-header{
+    position: fixed;
+    top: 65px; left: 13%;
+    z-index: 10;
+}
+.profile-header h1{
+    font-size: 6rem;
+    font-weight: bold;
+    color: #ffdf6c;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+}
+
+.profile-header h2{
+    font-size: 6rem;
+    font-weight: bold;
+    color: #fcfcfb;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+}
+
+.profile-header p{
+    font-size: 0.8rem;
+    margin-bottom: 12px;
+    color: #ddd;
+    text-align: left;
+}
+
+/* ----- CONTENT ----- */
+.contant{
+    width: 100%;
+    margin: 0 auto;
+    position: absolute;
+    top: 55%; left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 30px;
+    justify-items: center;
+    align-items: center;
+}
+
+/* ----- CARD BOX ----- */
+.card .box{
+    width: 160px;
+    height: 160px;
+    border-radius: 20px;
+    position: relative;
+    transition: 0.4s;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: #fff;
+}
+.contant .box:hover{
+    transform: translateY(-12px) scale(1.1);
+    box-shadow: 0 15px 30px #f78d2b59, 0 0 25px rgba(255,255,255,0.4);
+}
+.card .box i{
+    font-size: 4rem;
+    transition: 0.3s;
+}
+.card .box:hover i{ transform: scale(1.2); }
+
+/* ---- BRAND COLORS ---- */
+.bg1{ background: #1877F2; } /* Facebook */
+.bg2{ 
+    background: radial-gradient(circle at 30% 107%, 
+        #fdf497 0%, #fdf497 5%, #fd5949 45%, 
+        #d6249f 60%, #285AEB 90%);
+} /* Instagram */
+.bg3{ background: #06C755; } /* LINE */
+.bg4{ background: #000000; } /* TikTok */
+
+.bg1 i, .bg2 i, .bg3 i, .bg4 i { color: #fff; }
+
+.contact-info {
+  position: absolute;
+  bottom: 30px;   /* ระยะห่างจากขอบล่าง */
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #ffdf6c;
+  font-size: 1.2rem;
+  z-index: 10;    /* ให้อยู่บน BG แน่นอน */
+}
+
+.contact-info a {
+  color: #ffffff;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.contact-info a:hover {
+  color: #ffdf6c;
+  text-decoration: underline;
+}

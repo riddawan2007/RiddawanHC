@@ -1,0 +1,206 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+.container{
+    position: relative;
+    min-height: 100vh;
+}
+
+.bg{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.bg::after{
+    content:"";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(bg.jpg);
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(45%);
+    animation: zoomBg 20s infinite alternate ease-in-out;
+}
+
+@keyframes zoomBg {
+    from { transform: scale(1); }
+    to { transform: scale(1.1); }
+}
+
+/* ----- MENU TOP-RIGHT HORIZONTAL ----- */
+.menu{
+    position: fixed;
+    top: 20px;
+    right: 40px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background: rgba(0,0,0,0.4);
+    padding: 10px 20px;
+    border-radius: 25px;
+    backdrop-filter: blur(5px);
+}
+
+.menu .logo a {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ffdf6c;
+    letter-spacing: 1px;
+}
+
+.menu ul{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.menu ul li a{
+    font-weight: bold;
+    color: #fff;
+    font-size: 16px;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.menu ul li a::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #ffdf6c;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.menu ul li a:hover {
+    color: #ffdf6c;
+}
+
+.menu ul li a:hover::after {
+    width: 70%;
+}
+/* ----- CONTENT ----- */
+.content{
+    width: 85%;
+    margin: 0 auto;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content .header,
+.card{
+    width: 50%;
+    position: relative;
+}
+
+.content .header{
+    color: #fff;
+}
+
+.content .header h3,
+.content .header h1,
+.content .header p {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 1s ease forwards;
+}
+
+.content .header h3 { animation-delay: 0.2s; }
+.content .header h1 { animation-delay: 0.4s; font-size: 5rem; color:#ffdf6c; }
+.content .header p  { animation-delay: 0.6s; opacity: 0.7; font-size:1.2rem; }
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.content .header h3{
+    font-size: 2.1rem;
+    letter-spacing: 2px;
+    color: #e6e6e6;
+}
+
+/* ----- CARD 4 ช่อง ----- */
+.card {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+.icon-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 200px;
+  border-radius: 20px;
+  background: rgb(255, 223, 108);
+  color: #333;
+  font-size: 2.5rem;
+  transition: transform 0.3s, background 0.3s;
+  text-decoration: none;
+}
+
+.icon-box i {
+  margin-bottom: 10px;
+}
+
+.icon-box p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.icon-box:hover {
+  transform: scale(1.1);
+  background: #ff9900;
+  color: white;
+}
+
+/* ----- Social Media Bar (ซ้ายใต้ชื่อ) ----- */
+.social-bar {
+    position: absolute;
+    top: 90%;
+    display: flex;
+    gap: 20px;
+}
+
+.social-bar a {
+    color: #fff;
+    font-size: 1.8rem;
+    transition: 0.3s;
+}
+
+.social-bar a:hover {
+    color: #ffdf6c;
+    transform: scale(1.2);
+}

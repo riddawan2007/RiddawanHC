@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="TIME.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+ <div class="container bg">
+    <div class="menu">
+      <div class="logo"> 
+        <a href="index.html">THAWIN</a>
+      </div>
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="profile.html">PROFILE</a></li>
+        <li><a href="gallery.html">GALLERY</a></li>
+        <li><a href="time.html">TIME</a></li>
+        <li><a href="social.html">SOCIAL</a></li>
+      </ul>
+    </div>
+    <!-- Profile Header -->
+    <div class="profile-header">
+      <h1>TIME </h1>
+    </div>
+
+    <!-- CLOCK AREA -->
+    <div class="contant">
+      <!-- Digital Clock -->
+      <div class="clock" id="clock"></div>
+
+      <!-- Analog Clock -->
+      <div class="analog-clock">
+        <div class="dial12"></div>
+        <div class="dial3"></div>
+        <div class="dial6"></div>
+        <div class="dial9"></div>
+
+        <div class="hand hour" id="hour"></div>
+        <div class="hand minute" id="minute"></div>
+        <div class="hand second" id="second"></div>
+        <div class="center-dot"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Digital Clock
+    function updateClock() {
+      const now = new Date();
+      let hours = now.getHours().toString().padStart(2, '0');
+      let minutes = now.getMinutes().toString().padStart(2, '0');
+      let seconds = now.getSeconds().toString().padStart(2, '0');
+      document.getElementById('clock').innerText = `${hours}:${minutes}:${seconds}`;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+  
+  </script>
+</body>
+</html>

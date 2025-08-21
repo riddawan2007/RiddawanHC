@@ -1,0 +1,130 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial;
+}
+* a{ text-decoration: none; }
+* li{ list-style: none; }
+
+.container{ position: relative; min-height: 100vh; }
+
+.bg{ width: 100%; height: 100%; position: relative; }
+.bg::after{
+  content:"";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-image: url(BGSocial.jpg);
+  z-index: -1;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(45%);
+  animation: zoomBg 20s infinite alternate ease-in-out;
+}
+@keyframes zoomBg {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}
+
+/* ----- MENU ----- */
+.menu{
+  position: fixed;
+  top: 20px;
+  right: 40px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  background: rgba(0,0,0,0.4);
+  padding: 10px 20px;
+  border-radius: 25px;
+  backdrop-filter: blur(5px);
+  z-index: 20;
+}
+.menu .logo a {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #ffdf6c;
+  letter-spacing: 1px;
+}
+.menu ul{ display: flex; gap: 20px; }
+.menu ul li a{
+  font-weight: bold;
+  color: #fff;
+  font-size: 16px;
+  transition: all 0.3s;
+  position: relative;
+}
+.menu ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px; left: 50%;
+  width: 0; height: 2px;
+  background: #ffdf6c;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+.menu ul li a:hover{ color: #ffdf6c; }
+.menu ul li a:hover::after{ width: 70%; }
+
+/* ----- PROFILE HEADER ----- */
+.profile-header{
+  position: absolute;
+  top: 150px; 
+  left: 40%;
+  z-index: 10;
+}
+.profile-header h1{
+  font-size: 6rem;
+  font-weight: bold;
+  color: #ffdf6c;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+  text-align: center;
+}
+
+
+
+/* ----- CONTENT ----- */
+.contant{
+  width: 100%;
+  margin: 0 auto;
+  position: absolute;
+  top: 55%; left: 50%;
+  transform: translate(-50%,-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ----- DIGITAL CLOCK ----- */
+.clock {
+  font-size: 10rem;
+  font-weight: bold;
+  color: #ffdf6c;
+  text-shadow: 
+      0 0 10px rgba(255, 223, 108, 0.8),
+      0 0 20px rgba(255, 223, 108, 0.6),
+      0 0 40px rgba(255, 223, 108, 0.4);
+  background: rgba(0,0,0,0.4);
+  padding: 20px 40px;
+  border-radius: 20px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  animation: glowPulse 2s infinite alternate ease-in-out;
+}
+@keyframes glowPulse {
+  from {
+    text-shadow: 
+        0 0 10px rgba(255, 223, 108, 0.9),
+        0 0 20px rgba(255, 223, 108, 0.7),
+        0 0 40px rgba(255, 223, 108, 0.5);
+    transform: scale(1);
+  }
+  to {
+    text-shadow: 
+        0 0 20px rgba(255, 223, 108, 1),
+        0 0 40px rgba(255, 223, 108, 0.8),
+        0 0 60px rgba(255, 223, 108, 0.6);
+    transform: scale(1.05);
+  }
+}
