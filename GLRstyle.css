@@ -3,16 +3,16 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 a { text-decoration: none; }
 li { list-style: none; }
 
 html, body {
-  height: auto;
   min-height: 100%;
-  overflow-y: auto;   /* เปิดการเลื่อนลง */
+  height: auto;
+  overflow-y: auto;
 }
 
 .container {
@@ -22,26 +22,26 @@ html, body {
 
 /* ---------- BACKGROUND ---------- */
 .bg {
-  position: fixed;   /* ให้พื้นหลังปักเต็มจอ */
+  position: fixed;
   top: 0; left: 0;
   width: 100%;
-  height: 100%;      /* ใช้ height 100% แทน */
-  z-index: -1;       /* อยู่ข้างหลังสุด */
+  height: 100%;
+  z-index: -1;
 }
 .bg::after {
   content: "";
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background-image: url(BGSocial.jpg);
-  background-size: cover;
-  background-position: center;
+  inset: 0;
+  background: url(S__9617414.jpg) center/cover no-repeat;
   filter: brightness(45%);
+  transform: scale(1);
+  will-change: transform;
   animation: zoomBg 20s infinite alternate ease-in-out;
 }
+
 @keyframes zoomBg {
   from { transform: scale(1); }
-  to { transform: scale(1.1); }
+  to   { transform: scale(1.1); }
 }
 
 /* ---------- MENU ---------- */
@@ -58,34 +58,46 @@ html, body {
   backdrop-filter: blur(5px);
   z-index: 20;
 }
+
 .menu .logo a {
   font-size: 1.4rem;
   font-weight: bold;
   color: #ffdf6c;
   letter-spacing: 1px;
 }
+
 .menu ul {
   display: flex;
   gap: 20px;
 }
+
 .menu ul li a {
+  position: relative;
+  font-size: 16px;
   font-weight: bold;
   color: #fff;
-  font-size: 16px;
-  transition: all 0.3s;
-  position: relative;
+  transition: color 0.3s ease;
 }
+
 .menu ul li a::after {
   content: "";
   position: absolute;
-  bottom: -5px; left: 50%;
-  width: 0; height: 2px;
+  bottom: -5px;
+  left: 50%;
+  width: 0;
+  height: 2px;
   background: #ffdf6c;
-  transition: all 0.3s ease;
   transform: translateX(-50%);
+  transition: width 0.3s ease;
 }
-.menu ul li a:hover { color: #ffdf6c; }
-.menu ul li a:hover::after { width: 70%; }
+
+.menu ul li a:hover {
+  color: #ffdf6c;
+}
+
+.menu ul li a:hover::after {
+  width: 70%;
+}
 
 /* ---------- HEADER ---------- */
 .profile-header {
@@ -93,27 +105,33 @@ html, body {
   margin: 120px 0 40px 12%;
   z-index: 5;
 }
+
 .profile-header h1 {
-  font-size: 5rem;
-  font-weight: bold;
+  font-family: 'Caveat', cursive;
+  font-size: 6rem;
+  font-weight: 700;
   color: #ffdf6c;
   text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
   animation: fadeInDown 1s ease;
 }
+
 .profile-header h2 {
-  font-size: 3rem;
-  font-weight: bold;
+  font-family: 'Caveat', cursive;
+  font-size: 4rem;
+  font-weight: 500;
   color: #fcfcfb;
   text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
   animation: fadeInLeft 1.5s ease;
 }
+
 @keyframes fadeInDown {
   from { opacity: 0; transform: translateY(-40px); }
-  to { opacity: 1; transform: translateY(0); }
+  to   { opacity: 1; transform: translateY(0); }
 }
+
 @keyframes fadeInLeft {
   from { opacity: 0; transform: translateX(-40px); }
-  to { opacity: 1; transform: translateX(0); }
+  to   { opacity: 1; transform: translateX(0); }
 }
 
 /* ---------- GALLERY ---------- */
@@ -125,13 +143,14 @@ html, body {
 }
 
 .album-title {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #ffdf6c;
-  margin: 50px 0 20px 0;
   display: flex;
   align-items: center;
   gap: 10px;
+  margin: 50px 0 20px 0;
+  font-family: 'Caveat', cursive;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ffdf6c;
   text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
   animation: fadeInLeft 1s ease;
 }
@@ -149,16 +168,16 @@ html, body {
   height: 220px;
   object-fit: cover;
   border-radius: 15px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.4);
-  transition: all 0.4s ease;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
   cursor: pointer;
-  position: relative;
+  will-change: transform, filter;
 }
 
 /* Hover effect */
 .gallery img:hover {
-  transform: scale(1.08);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+  transform: scale(1.05);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.5);
   filter: brightness(110%);
 }
 

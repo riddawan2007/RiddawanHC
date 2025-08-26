@@ -1,76 +1,110 @@
 *{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial;
-}
-* a{ text-decoration: none; }
-* li{ list-style: none; }
-
-.container{ position: relative; min-height: 100vh; }
-
-.bg{ width: 100%; height: 100%; position: relative; }
-.bg::after{
-  content:"";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background-image: url(BGSocial.jpg);
-  z-index: -1;
-  background-size: cover;
-  background-position: center;
-  filter: brightness(45%);
-  animation: zoomBg 20s infinite alternate ease-in-out;
-}
-@keyframes zoomBg {
-  from { transform: scale(1); }
-  to { transform: scale(1.1); }
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* ----- MENU ----- */
-.menu{
-  position: fixed;
-  top: 20px;
-  right: 40px;
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  background: rgba(0,0,0,0.4);
-  padding: 10px 20px;
-  border-radius: 25px;
-  backdrop-filter: blur(5px);
-  z-index: 20;
+a { text-decoration: none; }
+li { list-style: none; }
+
+html, body {
+  min-height: 100%;
+  height: auto;
+  overflow-y: auto;
 }
-.menu .logo a {
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: #ffdf6c;
-  letter-spacing: 1px;
-}
-.menu ul{ display: flex; gap: 20px; }
-.menu ul li a{
-  font-weight: bold;
-  color: #fff;
-  font-size: 16px;
-  transition: all 0.3s;
+
+.container {
   position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;   /* จัดกลางแนวตั้ง */
+  justify-content: center; /* จัดกลางแนวนอน */
 }
-.menu ul li a::after {
+
+.bg {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.bg::after {
   content: "";
   position: absolute;
-  bottom: -5px; left: 50%;
-  width: 0; height: 2px;
-  background: #ffdf6c;
-  transition: all 0.3s ease;
-  transform: translateX(-50%);
+  inset: 0;
+  background: url(S__9617415_0.jpg) center/cover no-repeat;
+  filter: brightness(45%);
+  transform: scale(1);
+  will-change: transform;
+  animation: zoomBg 20s infinite alternate ease-in-out;
 }
-.menu ul li a:hover{ color: #ffdf6c; }
-.menu ul li a:hover::after{ width: 70%; }
+
+@keyframes zoomBg {
+  from { transform: scale(1); }
+  to   { transform: scale(1.1); }
+}
+
+/* ----- MENU TOP-RIGHT HORIZONTAL ----- */
+.menu{
+    position: fixed;
+    top: 20px;
+    right: 40px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background: rgba(0,0,0,0.4);
+    padding: 10px 20px;
+    border-radius: 25px;
+    backdrop-filter: blur(5px);
+    z-index: 1;
+}
+
+.menu .logo a {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ffdf6c;
+    letter-spacing: 1px;
+}
+
+.menu ul{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.menu ul li a{
+    font-weight: bold;
+    color: #fff;
+    font-size: 16px;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.menu ul li a::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #ffdf6c;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.menu ul li a:hover {
+    color: #ffdf6c;
+}
+
+.menu ul li a:hover::after {
+    width: 70%;
+}
 
 /* ----- PROFILE HEADER ----- */
 .profile-header{
   position: absolute;
-  top: 150px; 
+  top: 130px; 
   left: 40%;
   z-index: 10;
 }
@@ -94,11 +128,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1;
 }
 
 /* ----- DIGITAL CLOCK ----- */
 .clock {
-  font-size: 10rem;
+  font-size: 8rem;
   font-weight: bold;
   color: #ffdf6c;
   text-shadow: 
@@ -106,7 +141,7 @@
       0 0 20px rgba(255, 223, 108, 0.6),
       0 0 40px rgba(255, 223, 108, 0.4);
   background: rgba(0,0,0,0.4);
-  padding: 20px 40px;
+  padding: 20px 50px;
   border-radius: 20px;
   backdrop-filter: blur(8px);
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);

@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 a { text-decoration: none; }
@@ -28,7 +28,7 @@ li { list-style: none; }
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background-image: url(BGSocial.jpg);
+  background-image: url(S__9617411_0.jpg);
   background-size: cover;
   background-position: center;
   filter: brightness(45%);

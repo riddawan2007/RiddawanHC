@@ -5,43 +5,44 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-a{
-    text-decoration: none;
+a { text-decoration: none; }
+li { list-style: none; }
+
+html, body {
+  min-height: 100%;
+  height: auto;
+  overflow-y: auto;
 }
 
-li{
-    list-style: none;
+.container {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;   /* จัดกลางแนวตั้ง */
+  justify-content: center; /* จัดกลางแนวนอน */
 }
 
-.container{
-    position: relative;
-    min-height: 100vh;
+.bg {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
-
-.bg{
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
-
-.bg::after{
-    content:"";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url(bg.jpg);
-    z-index: -1;
-    background-size: cover;
-    background-position: center;
-    filter: brightness(45%);
-    animation: zoomBg 20s infinite alternate ease-in-out;
+.bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url(bg.jpg) center/cover no-repeat;
+  filter: brightness(45%);
+  transform: scale(1);
+  will-change: transform;
+  animation: zoomBg 20s infinite alternate ease-in-out;
 }
 
 @keyframes zoomBg {
-    from { transform: scale(1); }
-    to { transform: scale(1.1); }
+  from { transform: scale(1); }
+  to   { transform: scale(1.1); }
 }
 
 /* ----- MENU TOP-RIGHT HORIZONTAL ----- */
@@ -56,6 +57,7 @@ li{
     padding: 10px 20px;
     border-radius: 25px;
     backdrop-filter: blur(5px);
+    z-index: 1;
 }
 
 .menu .logo a {
@@ -109,6 +111,7 @@ li{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 1;
 }
 
 .content .header,
@@ -164,7 +167,7 @@ li{
   width: 100%;
   height: 200px;
   border-radius: 20px;
-  background: rgb(255, 223, 108);
+  background:rgb(255, 223, 108);
   color: #333;
   font-size: 2.5rem;
   transition: transform 0.3s, background 0.3s;
