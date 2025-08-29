@@ -114,7 +114,7 @@ html, body {
 /* ----- CONTENT ----- */
 .content{
     width: 85%;
-    margin-top: 120px; /* กันเมนู */
+    margin-top: 50px; /* กันเมนู */
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -133,6 +133,7 @@ html, body {
 .content .header{
     color: #fff;
     text-align: left;
+
 }
 
 .content .header h3,
@@ -141,6 +142,8 @@ html, body {
     opacity: 0;
     transform: translateY(20px);
     animation: fadeUp 1s ease forwards;
+    font-family: 'Caveat', cursive;
+    font-weight: bold;
 }
 
 .content .header h3 { animation-delay: 0.2s; }
@@ -157,7 +160,7 @@ html, body {
 .content .header h3{
     font-size: 2.1rem;
     letter-spacing: 2px;
-    color: #e6e6e6;
+    color: #e6e6e6
 }
 
 /* ----- CARD 4 ช่อง ----- */
@@ -192,7 +195,10 @@ html, body {
 .icon-box p {
   font-size: 1rem;
   margin: 0;
+    font-family: 'Caveat', cursive;
+    font-weight: bold;
 }
+
 
 .icon-box:hover {
   transform: scale(1.1);
