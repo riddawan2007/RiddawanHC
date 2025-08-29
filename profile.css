@@ -216,13 +216,12 @@ li { list-style: none; }
   color: #ffdf6c;
   margin: 15px 0 12px 0;
   font-size: 1.4rem;
-  font-family: 'Caveat', cursive;
 }
 .about-me p {
   margin-bottom: 15px;
   line-height: 1.7;
   font-size: 1rem;
-  font-family: 'Caveat', cursive;
+ 
 }
 .about-me .skills {
   list-style: none;
