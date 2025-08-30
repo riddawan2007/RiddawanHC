@@ -195,7 +195,7 @@ html, body {
    RESPONSIVE DESIGN
    ========================= */
 
-@media (max-width: 1028px) {
+@media (max-width: 992px) {
   .card { grid-template-columns: repeat(2,1fr); gap: 20px; }
   .profile-header h1, .profile-header h2 { font-size: 4rem; }
 .card .box{
