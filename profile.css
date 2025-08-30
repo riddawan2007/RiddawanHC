@@ -265,45 +265,34 @@ li { list-style: none; }
   .profile-header h1, .profile-header h2 { font-size: 3.8rem; }
 
   .menu {
-    top: 10px;
-    right: 20px;
-    gap: 15px;
-    padding: 8px 15px;
+    top: 15px;
+    right: 25px;
+    gap: 20px;
+    padding: 8px 18px;
   }
 
-  .menu .logo a { font-size: 1.2rem; }
-  .menu ul li a { font-size: 14px; }
-
-  /* ซ่อนเมนูแบบเต็ม ใช้ Hamburger */
-  .menu ul {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    background: rgba(0,0,0,0.85);
-    padding: 12px 18px;
-    border-radius: 10px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.4);
-  }
-
-  .menu ul.show {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
+  .menu .logo a { font-size: 1.3rem; }
+  .menu ul li a { font-size: 15px; }
 }
-
 
 /* --- Tablet / iPad แนวตั้ง (≤ 768px) --- */
 @media (max-width: 992px) {
-  .card { grid-template-columns: repeat(2,1fr); gap: 20px; }
+  .card { grid-template-columns: repeat(3,1fr); gap: 20px; }
   .profile-header h1, .profile-header h2 { font-size: 3.8rem; }
+
+  .profile-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
   .about-me{
     display: flex;
+    flex-direction: column;
+    position:absolute;
+    gap: 10px;
+    margin-top:450px;
+    left: 10px;
   }
 
   .menu {
@@ -366,6 +355,7 @@ li { list-style: none; }
     width: 90%;
     max-width: 280px;
     height: 150px;
+    align-items: center;
   }
 
   .contact-info { font-size: 1rem; }
