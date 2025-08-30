@@ -195,8 +195,7 @@ html, body {
    RESPONSIVE DESIGN
    ========================= */
 
-/* Tablet */
-@media (max-width: 768px) {
+@media (max-width: 1028px) {
   .card { grid-template-columns: repeat(2,1fr); gap: 20px; }
   .profile-header h1, .profile-header h2 { font-size: 4rem; }
 
@@ -230,9 +229,87 @@ html, body {
     display: block;
   }
 }
+@media (max-width: 992px) {
+  .card { grid-template-columns: repeat(2,1fr); gap: 20px; }
+  .profile-header h1, .profile-header h2 { font-size: 4rem; }
+
+  .menu {
+    top: 10px;
+    right: 20px;
+    gap: 15px;
+    padding: 8px 15px;
+    z-index: 100;
+  }
+
+  .menu .logo a { font-size: 1.2rem; }
+  .menu ul li a { font-size: 14px; }
+
+  .menu ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: rgba(0,0,0,0.8);
+    padding: 10px 20px;
+    border-radius: 10px;
+  }
+
+  .menu ul.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+.card .box{
+    width: 200px;
+    height: 200px;
+}
+}
+
+
+   /* Tablet */
+@media (max-width: 768px) {
+  .card { grid-template-columns: repeat(2,1fr); gap: 20px; }
+  .profile-header h1, .profile-header h2 { font-size: 4rem; }
+
+  
+
+  .menu {
+    top: 10px;
+    right: 20px;
+    gap: 15px;
+    padding: 8px 15px;
+    z-index: 100;
+  }
+
+  .menu .logo a { font-size: 1.2rem; }
+  .menu ul li a { font-size: 14px; }
+
+  .menu ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: rgba(0,0,0,0.8);
+    padding: 10px 20px;
+    border-radius: 10px;
+  }
+
+  .menu ul.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
 
 /* Mobile */
-@media (max-width: 440px) {
+@media (max-width: 576px) {
   .menu {
     top: 0;
     left: 0;

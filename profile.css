@@ -243,7 +243,7 @@ li { list-style: none; }
    ========================= */
 
 /* --- ขนาดกลาง: Laptop / Tablet แนวนอน (≤ 1028px) --- */
-@media (max-width: 1028px) {
+@media (max-width: 1440px) {
   .profile-header h1 { font-size: 4.5rem; }
   .profile-header h2 { font-size: 5.2rem; }
 
@@ -260,8 +260,7 @@ li { list-style: none; }
   .menu ul li a { font-size: 15px; }
 }
 
-/* --- Tablet / iPad แนวตั้ง (≤ 768px) --- */
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .card { grid-template-columns: repeat(2,1fr); gap: 20px; }
   .profile-header h1, .profile-header h2 { font-size: 3.8rem; }
 
@@ -297,8 +296,50 @@ li { list-style: none; }
   }
 }
 
+
+/* --- Tablet / iPad แนวตั้ง (≤ 768px) --- */
+@media (max-width: 992px) {
+  .card { grid-template-columns: repeat(2,1fr); gap: 20px; }
+  .profile-header h1, .profile-header h2 { font-size: 3.8rem; }
+
+  .about-me{
+    display: flex;
+  }
+
+  .menu {
+    top: 10px;
+    right: 20px;
+    gap: 15px;
+    padding: 8px 15px;
+  }
+
+  .menu .logo a { font-size: 1.2rem; }
+  .menu ul li a { font-size: 14px; }
+
+  /* ซ่อนเมนูแบบเต็ม ใช้ Hamburger */
+  .menu ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: rgba(0,0,0,0.85);
+    padding: 12px 18px;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+  }
+
+  .menu ul.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
 /* --- Mobile (≤ 480px) --- */
-@media (max-width: 440px) {
+@media (max-width: 576px) {
   .menu {
     top: 0;
     left: 0;
@@ -328,5 +369,4 @@ li { list-style: none; }
   }
 
   .contact-info { font-size: 1rem; }
-
 }
