@@ -366,7 +366,7 @@ html, body {
 }
 
 /* --- มือถือ (480px) --- */
-@media (max-width: 480px) {
+@media (max-width: 576px) {
   .menu {
     top: 0;
     left: 0;
