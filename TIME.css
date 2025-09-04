@@ -234,7 +234,7 @@ html, body {
 /* --- Screen ≤ 768px (Tablet) --- */
 @media (max-width: 768px) {
   .profile-header {
-    top: 20%;
+    top: 120px;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
